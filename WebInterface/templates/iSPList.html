@@ -1,0 +1,20 @@
+<ion-view title="ISP List" id="page-isp-list">
+    <ion-content padding="true" class="has-header">
+        <form id="isp-list-search-form" class="list">
+            <label class="item item-input" name="search">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="search" placeholder="Search" ng-change="applySearchStrChange()" ng-model="searchStr.value">
+            </label>
+        </form>
+        <h4 id="isp-list-bbcount" style="color:#000000;">{{providersList.length}} BROADBANDS</h4>
+        <ion-list id="isp-list-providers-list">
+            <ion-item class="item-thumbnail-left" collection-repeat="provider in providersList" href="#/tabs/providers/{{provider.index}}">
+                <img ng-src={{provider.image}}>
+                <h1>{{provider.name}}</h1>
+                <p>
+                    {{provider.plansCount}} plans
+                </p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

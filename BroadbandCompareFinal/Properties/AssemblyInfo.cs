@@ -9,7 +9,7 @@ using Android.App;
 [assembly: AssemblyTitle("BroadbandCompareFinal")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("BroadBandCompare")]
 [assembly: AssemblyProduct("BroadbandCompareFinal")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]

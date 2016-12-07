@@ -1,0 +1,16 @@
+<ion-view title="Home" id="page-home" hide-nav-bar="true">
+    <ion-content class="home has-header" padding="false">
+        <div class="row">
+            <div class="col col-100">
+              <img class="logo-big" src="img/logo-bc_big.png" alt="broadband compare logo">
+
+            </div>
+        </div>
+        <address-selector address="address" directive-control="addressSelectorControl">
+        </address-selector>
+        <button ui-sref="tabs.compareBroadbands" id="filter-button-compare"
+                class="button button-energized  button-block home-button-search" ng-click="applyAddress()">
+            CHECK ADDRESS
+        </button>
+    </ion-content>
+</ion-view>

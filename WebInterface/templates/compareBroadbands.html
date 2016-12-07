@@ -1,0 +1,87 @@
+<ion-view title="Compare Broadbands" id="page-compare">
+    <ion-content padding="true" class="has-header">
+        <div class="row">
+            <div class="col">
+                <i class="icon ion-android-pin"></i>
+            </div>
+            <div class="col col-80">
+                <h3 id="compareBroadbands-heading3" style="color:#000000;">Address</h3>
+                <div id="compareBroadbands-markdown6" style="color:#000000;" ng-show="addressSet">
+                    <p>{{address.value}}</p>
+                </div>
+                <label class="item item-input" name="search" ng-show="!addressSet">
+                    <i class="icon ion-search placeholder-icon"></i>
+                    <input id="addr-check" type="search" placeholder="Search" ng-model="address.value">
+                </label>
+            </div>
+            <div class="col">
+                <button id="compareBroadbands-button-reset-address"
+                        class="button button-light icon-left ion-android-cancel"
+                        ng-show="addressSet" ng-click="resetAddress()">
+                </button>
+                <button id="compareBroadbands-button-applu-address"
+                        class="button button-positive icon-left ion-checkmark-circled"
+                        ng-show="!addressSet" ng-click="applyAddress()">
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h4 id="compareBroadbands-heading11" style="color:#000000;">{{plansList.length}} PLANS</h4>
+            </div>
+            <div class="col">
+                <button ui-sref="tabs.filter" id="compareBroadbands-button-filter"
+                        class="button button-stable button-block icon-left ion-funnel">filter
+                </button>
+            </div>
+        </div>
+        <label class="item item-select" id="compareBroadbands-select-sort">
+            <span class="input-label">Sort by</span>
+            <select ng-model="sortBy.val" ng-change="sortPlans()"
+                    ng-options="sorting as sorting.title for sorting in sortings track by sorting.value">
+            </select>
+        </label>
+        <ion-list id="compareBroadbands-list-families">
+            <ion-item class="item-thumbnail-left" ng-repeat="plan in plansList" href="#/tabs/plans/{{plan.index}}">
+                <img ng-src={{plan.provider.image}}>
+                <div class="row">
+                    <div class="col">
+                        <h2>{{plan.name}}</h2>
+                        <p>{{plan.provider.name}}</p>
+                    </div>
+                    <div class="col col-20">
+                        <p>{{plan.connection}}</p>
+                    </div>
+                    <div class="col col-30">
+                        <button id="compareBroadbands-button-special-offer" class="button button-positive"
+                                ng-show="plan.specialOffer !== ''">
+                            S
+                        </button>
+                        <button id="compareBroadbands-button-cashback" class="button button-energized"
+                                ng-show="plan.cashBack !== 0">
+                            {{plan.cashBack | currency : $ : 0}}
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-25">
+                        <h2>"STAR"</h2>
+                        <p>{{plan.rating}}</p>
+                    </div>
+                    <div class="col col-40">
+                        <p>from</p>
+                        <h2>{{plan.minPrice | currency : $ : 2}}</h2>
+                    </div>
+                    <div class="col">
+                        <p>up to</p>
+                        <h2>
+                            <span ng-show="plan.maxData !== 0">{{plan.maxData}}MB</span>
+                            <span ng-show="plan.maxData === 0">Unlimited</span>
+                            data
+                        </h2>
+                    </div>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

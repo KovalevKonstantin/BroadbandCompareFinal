@@ -1,0 +1,106 @@
+<ion-modal-view title="Special offers" id="page-specials" style="background-color:#00b2c7;">
+    <ion-header-bar class="bar-positive">
+        <div class="container">
+            <div class="buttons">
+                <button class="button button-icon ion-ios-close-empty" ng-click="closeSpecials()"></button>
+                <h1 class="title">Special offers</h1>
+            </div>
+        </div>
+    </ion-header-bar>
+    <ion-content class="has-header">
+        <div class="container">
+            <div ng-show="plansList[planIndex].specialOffer !== ''">
+            <h2 id="specialOffers-heading5" style="color:#FFFFFF;">SPECIAL:</h2>
+            <div class="text special-text" id="specialOffers-markdown5" style="color:#FFFFFF;" ng-bind-html="plansList[planIndex].specialOffer">
+            </div>
+        </div>
+        <div ng-show="plansList[planIndex].cashBack > 0">
+            <h2 id="specialOffers-heading7" style="color:#FFFFFF;">CASHBACK {{plansList[planIndex].cashBack | currency :
+                $ : 0}}</h2>
+            <div class="text" id="specialOffers-cashback-short" style="color:#FFFFFF;" ng-show="!showCashbackFull">
+                <p>1. Participants must be resident in New Zealand and are deemed to have agreed to be bound by these
+                    terms and condi ...</p>
+                <p><a href="#" style="color: #FFFFFF" ng-click="setShowCashbackFull(true)">Read more</a></p>
+            </div>
+            <div id="specialOffers-cashback-full" style="color:#FFFFFF;" ng-show="showCashbackFull">
+                <div class="content text">
+                    <p>1. &nbsp;Participants must be resident in New Zealand and are deemed to have
+                        agreed to be bound by these terms and conditions.</p>
+                    <p>2. &nbsp;To qualify for this offer the participant must subscribe to a qualifying broadband plan
+                        from a qualifying broadband provider through the <strong><u>specific referral link </u></strong>that
+                        can be found on the BroadbandCompare website which operates at www.broadbandcompare.co.nz.</p>
+                    <p>3. &nbsp;The cash back incentive runs from 27/04/16 until the end date is advised by
+                        BroadbandCompare. &nbsp;Purchases must be made in New Zealand from the BroadbandCompare.co.nz
+                        website.</p>
+                    <p>4. &nbsp;To claim, individuals must visit
+                        <a href="#" style="color:#FFFFFF;" ng-click="openWebpage('http://www.broadbandcompare.co.nz/p/cashback')">
+                            <strong>http://www.broadbandcompare.co.nz/p/cashback</strong>
+                        </a>and
+                        complete and submit the required information including (but not limited to) their name, address,
+                        email, telephone number, ISP customer number and any relevant sign up details.&nbsp; To complete
+                        the claim process individuals will then be required to email a copy of their first monthly bill
+                        to hello@broadbandcompare.co.nz.&nbsp;</p>
+                    <p>5. &nbsp;All claims must be lodged within 60 days of signing up with a qualifying internet
+                        service provider.&nbsp; BroadbandCompare.co.nz accepts no responsibility for claims not received
+                        by this date and any claim received after this date will not be processed.</p>
+                    <p>6. &nbsp;The invoice/bill must clearly specify the name, address and broadband plan of the
+                        claimant. &nbsp;If the invoice/bill is missing any of this information or is illegible or
+                        indecipherable it may render the claimant ineligible to claim for a refund. &nbsp;Should we be
+                        unable to read any information required for the claim to be fulfilled, we will endeavour to
+                        contact you via email; again it is the responsibility of the claimant to provide the correct
+                        information.</p>
+                    <p>7. &nbsp;Upon verification of a cash back claim, R O EYE Limited t/a BroadbandCompare will issue
+                        the payment via EFT or PayPal within 30 Days of receipt of all evidence reasonably required by
+                        BroadbandCompare for a valid claim. &nbsp;It is the responsibility of the claimant to provide
+                        the correct PayPal address or bank details for EFT. &nbsp;If incorrect bank account details or
+                        PayPal address is provided then this will render the claimant ineligible to claim. &nbsp;Payments
+                        are not transferable, assignable or exchangeable for other goods or services and is governed by
+                        New Zealand law.</p>
+                    <p>8. &nbsp;Claimants must retain a copy of their bill/invoice for all claims as proof of sign up.
+                        &nbsp;Failure to produce the bill if requested may, in the absolute discretion of the Promoter,
+                        result in invalidation of ALL of a claimant’s claims and forfeiture of any right to cash back.
+                        The claimant agrees that if they have already obtained the cash back, they will pay back the
+                        Promoter the value of the cash back, if they subsequently cancel their broadband plan
+                        subscription and seek a refund under any cancellation policy that the relevant internet provider
+                        may have.</p>
+                    <p>9. This offer is made by R O EYE Limited directly to purchasers of any qualifying broadband plan
+                        that is promoted through BroadbandCompare and specifically included in the cash back promotion.
+                        Although BroadbandCompare is specifically authorised to make this cash back offer on behalf of
+                        the internet service provider being promoted, any claims must be made directly to
+                        BroadbandCompare and BroadbandCompare retains exclusive responsibility for meeting any such
+                        claims. This offer is additional to and does not replace any of the legal rights of a consumer
+                        against a manufacturer or a supplier under the Consumer Guarantees Act 1993 (if applicable)
+                        and/or any other relevant legislation in force at the time of sign up.</p>
+                    <p>10. The Promoter collects personal information in order to conduct the Promotion. &nbsp;The
+                        Promoter may, for an indefinite period unless otherwise advised, use the information for
+                        promotional, marketing and publicity purposes including sending electronic messages or
+                        telephoning the entrant. Claimants should direct any requests to access, update or correct
+                        information to the Promoter. &nbsp;All claims become the property of the Promoter. &nbsp;Privacy
+                        policy may be viewed at http://www.broadbandcompare.co.nz/p/privacy-policy</p>
+                    <p>11. Only 1 claim may be made per qualifying plan purchased. Fraudulent use of the claim form may
+                        result in legal action being taken.</p>
+                    <p>12. Employees of R O EYE Limited t/a BroadbandCompare, Resellers and Participating dealers are
+                        not eligible to participate in this offer.</p>
+                    <p>13. Claims for this cash back offer cannot be accepted from those who purchase them for the
+                        purposes of commercial resale.</p>
+                    <p>14. The Promoter accepts no responsibility for any tax implications that may arise from this
+                        promotion. Independent financial advice should be sought by the claimant.</p>
+                    <p>15. BroadbandCompare reserves the right to terminate this promotion at any time and change the
+                        terms and conditions without incurring any liability.</p>
+                    <p>16. BroadbandCompare will not be liable for any failure to fulfil this promotion owing to
+                        circumstances reasonably beyond its control.</p>
+                    <p>17. BroadbandCompare will not be liable for any loss, damage or injury of any nature in relation
+                        to this promotion.</p>
+                    <p>18. BroadbandCompare has absolute discretion over whether a claimant meets qualifying criteria
+                        for cash back. There is no right of appeal</p>
+                    <p>19. The Promoter is R O EYE Limited t/a BroadbandCompare (www.BroadbandCompare.co.nz), 13 Mark
+                        Edward Drive, Half Moon Bay, Auckland, 2012. &nbsp;BroadbandCompare.co.nz will not be liable for
+                        any lost or misdirected mail.</p>
+                    <p>20. This promotion cannot be redeemed in conjunction with any other BroadbandCompare promotion,
+                        including other cash back promotions or rewards program and is governed by New Zealand Law.</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </ion-content>
+</ion-modal-view>

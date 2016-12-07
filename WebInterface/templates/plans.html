@@ -1,0 +1,114 @@
+<ion-view title="Plans" id="page7">
+    <ion-content padding="true" class="has-header">
+        <div class="row">
+            <div class="col col-10">
+                <button id="plans-button-prev-plan" style="color:#36ADCA;" ng-click="prevPlan()"
+                        ng-disabled="prevPlanDisabled()"
+                        class="button button-light  button-block icon-left ion-arrow-left-c"></button>
+            </div>
+            <div class="col">
+                <h3 id="plans-heading12" style="color:#000000;text-align:center;">{{planIndex - 0 + 1}}/{{plansList.length}}</h3>
+            </div>
+            <div class="col col-10">
+                <button id="plans-button-next-plan" style="color:#36ADCA;" ng-click="nextPlan()"
+                        ng-disabled="nextPlanDisabled()"
+                        class="button button-light  button-block icon-right ion-arrow-right-c"></button>
+            </div>
+        </div>
+
+        <div class="row">
+            <img ng-src={{plansList[planIndex].provider.image}}>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <h3>{{plansList[planIndex].name}}</h3>
+                        <p>{{plansList[planIndex].provider.name}}</p>
+                    </div>
+                    <div class="col col-33">
+                        <button id="compareBroadbands-button-special-offer" class="button button-positive"
+                                ng-show="plansList[planIndex].specialOffer !== ''">
+                            S
+                        </button>
+                        <button id="compareBroadbands-button-cashback" class="button button-energized"
+                                ng-show="plansList[planIndex].cashBack !== 0">
+                            {{plansList[planIndex].cashBack | currency : $ : 0}}
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-25">
+                        <h3>"STAR"</h3>
+                        <p>{{plansList[planIndex].rating}}</p>
+                    </div>
+                    <div class="col ">
+                        <p>from</p>
+                        <h3>{{plansList[planIndex].minPrice | currency : $ : 2}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <h1 id="plans-heading13" style="color:#000000;text-align:center;">OPTIONS({{plansList[planIndex].options.length}})</h1>
+        <ion-list id="plans-list3">
+            <div class="item item-body" id="plans-list-item-container1" ng-repeat="option in plansList[planIndex].options">
+                <h2 id="plans-heading14" style="color:#000000;">{{option.name}}</h2>
+                <div class="row">
+                    <div class="col">
+                        <p>speed</p>
+                        <h3>{{option.speedDnld}}/{{option.speedUpld}}Mbps</h3>
+                    </div>
+                    <div class="col ">
+                        <p>data</p>
+                        <h3>
+                            <span ng-show="option.data !== 0">{{option.data}}MB</span>
+                            <span ng-show="option.data === 0">Unlimited</span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>connection fee</p>
+                        <h3>
+                            <span ng-show="option.priceConnection > 0">{{option.priceConnection | currency : $ : 2}}</span>
+                            <span ng-show="option.priceConnection <= 0">Free</span>
+                        </h3>
+                    </div>
+                    <div class="col ">
+                        <p>termination fee</p>
+                        <h3>
+                            <span ng-show="option.priceTermination > 0">{{option.priceTermination | currency : $ : 2}}</span>
+                            <span ng-show="option.priceTermination <= 0">Free</span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>features</p>
+                        <h3>
+                            <span ng-repeat="feature in option.features">
+                                {{feature}}
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h3>"STAR"</h3>
+                        <p>{{option.rating}}</p>
+                    </div>
+                    <div class="col ">
+                        <h3>
+                            <span>{{option.price | currency : $ : 2}}</span><span>/mo</span>
+                        </h3>
+                        <p>
+                            <span ng-show="option.contract !== ''">{{option.contract}}</span>
+                            <span ng-show="option.contract === ''">No contract</span>
+                        </p>
+                    </div>
+                </div>
+                <button id="plans-button25" class="button button-positive  button-block">PURCHASE</button>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,112 @@
+<ion-view title="Compare broadbands" id="page-compare">
+    <ion-content class="has-header compare-broadband">
+        <div class="address">
+            <div class="container">
+                <div class="address-left">
+                    <i class="icon ion-android-pin location"></i>
+                </div>
+                <div class="address-right">
+                    <h3 class="address-caption" id="compareBroadbands-heading3" style="color:#000000;">Address</h3>
+                    <div class="address-get-wrap" id="compareBroadbands-markdown6" style="color:#000000;"
+                         ng-show="addressSet">
+                        <p>{{address.value}}</p>
+                    </div>
+                    <div class="address-set-wrap" ng-show="!addressSet">
+                        <address-selector address="address" directive-control="addressSelectorControl">
+                        </address-selector>
+                    </div>
+                    <div class="address-button-group">
+                        <button id="compareBroadbands-button-reset-address"
+                                class="button-reset button button-light icon-left ion-android-close"
+                                ng-show="addressSet" ng-click="resetAddress()">
+                        </button>
+                        <button id="compareBroadbands-button-apply-address"
+                                class="button-apply button button-light icon-left ion-checkmark"
+                                ng-show="!addressSet" ng-click="applyAddress()">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="filter-and-button-wrap">
+            <div class="container">
+                <div class="plan-count-wrap">
+                    <h4 id="compareBroadbands-heading11" style="color:#000000;">{{plansList.length}} PLANS</h4>
+                </div>
+                <div class="filter-button-wrap">
+                    <button ui-sref="tabs.filter" id="compareBroadbands-button-filter"
+                            class="button button-stable button-block icon-left ion-funnel">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="sort-by">
+            <div class="container">
+                <label class="item item-select" id="compareBroadbands-select-sort">
+                    <span class="input-label">Sort by</span>
+                    <select data-tap-disabled="true" ng-model="orderBy.val" ng-change="sortPlans()"
+                            ng-options="sorting as sorting.title for sorting in sortings track by sorting.value">
+                    </select>
+                </label>
+            </div>
+        </div>
+        <ion-list class="list-plans" id="compareBroadbands-list-families">
+            <ion-item class="item-thumbnail-left"
+                      ng-class="($index % 2) ? 'item-grey' : ''"
+                      collection-repeat="plan in plansList"
+                      ng-click="goToPlan(plan.index)">
+                <div class="row">
+                    <div class="item-left">
+                        <div class="plan-image-wrap">
+                            <img ng-src={{plan.provider.image}}>
+                        </div>
+                    </div>
+                    <div class="item-right">
+                        <div class="row">
+                            <div ng-style="plan.specialOffer == '' && plan.cashBack == 0 && {'max-width':'49vw'}"
+                                 class="plan-title-wrap">
+                                <h2>{{plan.name}}</h2>
+                                <p>{{plan.provider.name}}</p>
+                            </div>
+                            <div class="plan-conection-type-wrap">
+                                <p>{{plan.connectionType}}</p>
+                            </div>
+                            <div ng-hide="plan.specialOffer == '' && plan.cashBack == 0" class="col plan-button-wrap">
+                                <button class="special-offer-button" id="compareBroadbands-button-special-offer"
+                                        ng-show="plan.specialOffer !== ''" ng-click="showSpecials($event, $index)">
+                                    S
+                                </button>
+
+                                <button id="compareBroadbands-button-cashback" class="cashback-button"
+                                        ng-show="plan.cashBack > 0" ng-click="showSpecials($event, $index)">
+                                    <span>{{plan.cashBack | currency : $ : 0}}</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="star-count-wrap">
+                                <div class="parent-rating-icon icon ion-android-star">
+                                    <div style="height: {{100-plan.rating}}%"
+                                         class="child-rating-icon icon ion-android-star"></div>
+                                    <div class="number-rating">{{plan.rating}}</div>
+                                </div>
+                            </div>
+                            <div class="price-wrap">
+                                <p>from</p>
+                                <h2>{{plan.price | currency : $ : 2}}</h2>
+                            </div>
+                            <div class="speed-wrap">
+                                <p>up to</p>
+                                <h2>
+                                    <span ng-show="plan.maxData > 0">{{plan.maxData}}GB</span>
+                                    <span ng-show="plan.maxData <= 0">Unlimited</span>
+                                    data
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

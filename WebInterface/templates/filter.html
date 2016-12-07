@@ -1,0 +1,65 @@
+<ion-view title="Compare Broadbands" id="page-filter">
+    <ion-content padding="true" class="has-header">
+        <div class="row">
+            <div class="col">
+                <i class="icon ion-android-pin"></i>
+            </div>
+            <div class="col col-80">
+                <h3 id="filter-heading3" style="color:#000000;">Address</h3>
+                <label class="item item-input" name="search">
+                    <i class="icon ion-search placeholder-icon"></i>
+                    <input id="addr-check" type="search" placeholder="Search" ng-model="address.value">
+                </label>
+            </div>
+            <div class="col">
+                <button id="filter-button3" class="button button-light  icon-left ion-android-cancel"
+                        ng-click="resetAddress()">
+                </button>
+            </div>
+        </div>
+        <div id="filter-button-bar-filter" class="button-bar">
+            <button id="filter-button-filter-simple" class="button button-block" ng-class="modeButtonClass(false)"
+                    ng-click="setAdvancedMode(false)">
+                simple filters
+            </button>
+            <button id="filter-button-filter-advanced" class="button button-block" ng-class="modeButtonClass(true)"
+                    ng-click="setAdvancedMode(true)">
+                advanced filters
+            </button>
+        </div>
+        <h1 id="filter-heading4" style="color:#000000;text-align:center;">What do you need Internet for?</h1>
+        <div class="row">
+            <div class="col">
+                <div id="filter-speed-slider"></div>
+            </div>
+            <div class="col col-80">
+                <h3 id="filter-heading5" style="color:#000000;">Web-browsing &amp; Email</h3>
+                <h3 id="filter-heading6" style="color:#000000;">Skype &amp; Music online</h3>
+                <h3 id="filter-heading7" style="color:#000000;">YouTube &amp; Netflix</h3>
+                <h3 id="filter-heading8" style="color:#000000;">Online games</h3>
+            </div>
+        </div>
+        <h1 id="filter-heading10" style="color:#000000;text-align:center;">Price per month</h1>
+        <div id="filter-price-slider"></div>
+        <h1 id="filter-text-pricerange" style="color:#000000;text-align:center;">
+            {{priceMin | currency : $ : 0}} - {{priceMax | currency : $ : 0}}
+        </h1>
+        <h1 id="filter-heading9" style="color:#000000;text-align:center;">Extras</h1>
+        <button style="color:#36ADCA;" class="button button-block" ng-repeat="extra in extrasList"
+                ng-class="extraButtonClass($index)" ng-click="extraButtonClick($index)">
+            {{extra.name}}
+        </button>
+        <h1 id="filter-heading11" style="color:#000000;text-align:center;">Connection</h1>
+        <button style="color:#36ADCA;" class="button button-block" ng-repeat="option in connectionOptions"
+                ng-class="connectionOptionButtonClass($index)" ng-click="connectionOptionButtonClick($index)">
+            {{option.name}}
+        </button>
+        <button ui-sref="tabs.compareBroadbands" id="filter-button-compare"
+                class="button button-energized  button-block" ng-click="applyFilter()">
+            COMPARE
+        </button>
+        <button id="filter-button-reset" class="button button-stable  button-block" ng-click="resetFilter()">
+            reset filters
+        </button>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,89 @@
+<ion-modal-view title="Sign Up" id="page-signup">
+    <ion-header-bar class="bar-positive">
+        <div class="container">
+            <div class="buttons">
+                <button class="button button-icon ion-ios-close-empty" ng-click="closeSignUpPage()"></button>
+                <h1 class="title">Purchase</h1>
+            </div>
+        </div>
+    </ion-header-bar>
+    <ion-content class="has-header sign-up">
+        <div class="container">
+            <h1 class="designation" id="signUp-heading10" style="color:#000000;text-align:center;"
+            ng-show="showTextBlock(true, true, false, '')">
+            Place an order
+        </h1>
+        <h1 id="signUp-heading9" style="color:#000000;text-align:center;"
+            ng-show="showTextBlock(true, false, false,'')">
+            Please leave your details
+        </h1>
+        <div id="signUp-markdown8" style="color:#000000;" ng-show="showTextBlock(false, true, false,'')">
+            <p class="text-nice-choice">Nice choice! Please leave your details, so we can contact you if there are any queries about your
+                request.</p>
+        </div>
+        <div id="signUp-markdown10" style="color:#000000;" ng-show="showTextBlock(false, false, false,'')">
+            <p  class="text-nice-choice">Unfortunately, this internet provider is NOT a direct partner of Broadband Compare. However, now we know
+                your requirements, please leave your details and one of our partners will contact you with some great
+                alternatives you may not have found
+                yourself.</p>
+        </div>
+        <div id="signUp-markdown9" style="color:#000000;" ng-show="showTextBlock(false, true, true,'Compass')">
+            <p  class="text-nice-choice">A customer support manager from Compass will begin processing your order and get in touch shortly.</p>
+        </div>
+        <form id="signUp-form9" name="signupForm.value" class="list" ng-submit="signUp(signupForm.value)" novalidate="">
+
+            <div class="input-wrap">
+                <div class="error" ng-show="signupForm.value.customerName.$invalid && signupForm.value.$submitted">
+                Your name cannot be blank
+                </div>
+                <ion-input ng-class="signupForm.value.customerName.$invalid && signupForm.value.$submitted && 'error-border '" class="item item-input" id="signUp-input1">
+                    <input type="text" name="customerName" placeholder="Name" ng-model="purchaseName.value" required>
+                </ion-input>
+            </div>
+
+            <div class="input-wrap">
+                <div class="error" ng-show="signupForm.value.customerEmail.$invalid && signupForm.value.$submitted">
+                Invalid email address
+                </div>
+                <ion-input ng-class="signupForm.value.customerEmail.$invalid && signupForm.value.$submitted && 'error-border '" class="item item-input" id="signUp-input2">
+                    <input type="email" name="customerEmail" placeholder="Email" ng-model="purchaseEmail.value" required>
+                </ion-input>
+            </div>
+
+            <div class="input-wrap">
+                <div class="error" ng-show="signupForm.value.customerAddress.$invalid && signupForm.value.$submitted">
+                Invalid Address
+                </div>
+                <ion-input ng-class="ssignupForm.value.customerAddress.$invalid && signupForm.value.$submitted && 'error-border '" class="item item-input" id="signUp-input3">
+                    <input type="text" name="customerAddress" placeholder="Address" ng-model="purchaseAddress.value">
+                </ion-input>
+            </div>
+
+            <div class="input-wrap">
+                <div class="error" ng-show="!checkPhoneNumber(purchasePhone.value) && signupForm.value.$submitted">
+                Invalid phone number
+                </div>
+                <ion-input ng-class="!checkPhoneNumber(purchasePhone.value) && signupForm.value.$submitted && 'error-border '" class="item item-input" id="signUp-input4">
+                    <input type="text" name="customerPhone" placeholder="Phone" ng-model="purchasePhone.value"
+                           required>
+                </ion-input>
+            </div>
+
+            <div class="privacy-policy-wrap">
+                <ion-checkbox ng-model="purchaseAgree.value" name="customerAgree">
+                    I agree to NZCompare
+                </ion-checkbox>
+                <div id="signUp-markdown11" style="color:#000000;text-align:center;">
+                    <p class="privacy-policy"><a href="#" ng-click="goToTermsAndConditions()">
+                        Terms &amp; Conditions and Privacy Policy
+                    </a></p>
+                </div>
+                <div class="error privacy-policy-error" ng-show="!purchaseAgree.value && signupForm.value.$submitted">
+                    You should agree with Terms & Conditions and Privacy Policy
+                </div>
+            </div>
+            <input class="proceed" type="submit" id="signUp-button27" class="button button-positive button-block" value="PROCEED"/>
+        </form>
+        </div>
+    </ion-content>
+</ion-modal-view>

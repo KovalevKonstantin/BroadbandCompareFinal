@@ -15,14 +15,14 @@
     <AndroidApplication>true</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v4.4</TargetFrameworkVersion>
+    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -45,35 +45,8 @@
   <ItemGroup>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
-    <Reference Include="SQLite-net, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\sqlite-net-pcl.1.2.0\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLite-net.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="SQLitePCLRaw.batteries_green, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a84b7dcfb1391f7f, processorArchitecture=MSIL">
-      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.1-pre20161109081005\lib\MonoAndroid\SQLitePCLRaw.batteries_green.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="SQLitePCLRaw.batteries_v2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8226ea5df37bcae9, processorArchitecture=MSIL">
-      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.1-pre20161109081005\lib\MonoAndroid\SQLitePCLRaw.batteries_v2.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="SQLitePCLRaw.core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1488e028ca7ab535, processorArchitecture=MSIL">
-      <HintPath>..\packages\SQLitePCLRaw.core.1.1.1-pre20161109081005\lib\MonoAndroid\SQLitePCLRaw.core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="SQLitePCLRaw.lib.e_sqlite3, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e4ad490600e2234c, processorArchitecture=MSIL">
-      <HintPath>..\packages\SQLitePCLRaw.lib.e_sqlite3.android.1.1.1-pre20161109081005\lib\MonoAndroid\SQLitePCLRaw.lib.e_sqlite3.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="SQLitePCLRaw.provider.e_sqlite3, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9c301db686d0bd12, processorArchitecture=MSIL">
-      <HintPath>..\packages\SQLitePCLRaw.provider.e_sqlite3.android.1.1.1-pre20161109081005\lib\MonoAndroid\SQLitePCLRaw.provider.e_sqlite3.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.IO.Compression" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -83,56 +56,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <AndroidAsset Include="Assets\providers.sqlite" />
-    <AndroidAsset Include="Assets\manifest.json" />
-    <AndroidAsset Include="Assets\lib\ionic\version.json" />
-    <AndroidAsset Include="Assets\lib\ionic\fonts\ionicons.eot" />
-    <AndroidAsset Include="Assets\lib\ionic\fonts\ionicons.ttf" />
-    <AndroidAsset Include="Assets\lib\ionic\fonts\ionicons.woff" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_action-sheet.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_animations.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_backdrop.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_badge.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_bar.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_button-bar.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_button.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_checkbox.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_form.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_grid.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_items.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_list.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_loading.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_menu.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_mixins.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_modal.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_platform.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_popover.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_popup.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_progress.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_radio.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_range.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_refresher.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_reset.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_scaffolding.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_select.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_slide-box.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_slides.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_spinner.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_tabs.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_toggle.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_transitions.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_type.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_util.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\_variables.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\ionic.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\ionicons\_ionicons-font.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\ionicons\_ionicons-icons.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\ionicons\_ionicons-variables.scss" />
-    <AndroidAsset Include="Assets\lib\ionic\scss\ionicons\ionicons.scss" />
     <None Include="GettingStarted.Xamarin" />
-    <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml">
@@ -143,203 +69,12 @@
     <AndroidResource Include="Resources\values\Strings.xml" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\index.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\service-worker.js" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <AndroidAsset Include="Assets\css\nouislider.min.css" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\css\style.css" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\css\style.min.css" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\img\broadband_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\img\logo-bc_big.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\img\special-offer-ico.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\js\controllers\compare-broadbands-controller.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\js\controllers\filter-controller.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\js\controllers\home-controller.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\js\controllers\info-controller.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\js\controllers\isp-list-controller.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\js\controllers\plans-controller.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\js\controllers\provider-controller.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\js\directives\address-selector.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\js\services\basic-server-data-provider.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\js\services\plans-filter-provider.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\js\services\plans-list-provider.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\js\app.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\js\app-config.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\js\app-run.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\js\app-settings.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\js\functions.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\js\routes.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\lib\ionic\css\ionic.css" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\lib\ionic\css\ionic.min.css" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\lib\ionic\fonts\ionicons.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\lib\ionic\js\ionic-angular.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\lib\ionic\js\ionic-angular.min.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\lib\ionic\js\ionic.bundle.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\lib\ionic\js\ionic.bundle.min.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\lib\ionic\js\ionic.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\lib\ionic\js\ionic.min.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\lib\ionic\js\angular\angular-animate.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\lib\ionic\js\angular\angular-animate.min.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\lib\ionic\js\angular\angular-resource.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\lib\ionic\js\angular\angular-resource.min.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\lib\ionic\js\angular\angular-sanitize.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\lib\ionic\js\angular\angular-sanitize.min.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\lib\ionic\js\angular\angular.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\lib\ionic\js\angular\angular.min.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\lib\ionic\js\angular-ui\angular-ui-router.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\lib\ionic\js\angular-ui\angular-ui-router.min.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\lib\ionicuirouter\ionicUIRouter.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\lib\jquery\jquery-3.1.1.slim.min.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\lib\lodash.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\lib\nouislider.min.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\templates\address-selector.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\templates\compareBroadbands.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\templates\filter.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\templates\home.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\templates\info.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\templates\ispList.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\templates\loadSettings.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\templates\plans.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\templates\provider.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\templates\signUp.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\templates\specialOffers.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\templates\tabs.html" />
-  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>
-    if not exist "$(TargetDir)x86" md "$(TargetDir)x86"
-    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\x86\*.*" "$(TargetDir)x86"
-    if not exist "$(TargetDir)amd64" md "$(TargetDir)amd64"
-    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\amd64\*.*" "$(TargetDir)amd64"</PostBuildEvent>
-  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
      Other similar extension points exist, see Microsoft.Common.targets.
 		<Target Name="BeforeBuild">

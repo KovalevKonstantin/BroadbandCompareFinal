@@ -26,6 +26,8 @@ namespace BroadbandCompareFinal
 		
 		public static void UpdateIdValues()
 		{
+			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::BroadbandCompareFinal.Resource.String.ApplicationName;
+			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::BroadbandCompareFinal.Resource.String.Hello;
 		}
 		
 		public partial class Attribute
